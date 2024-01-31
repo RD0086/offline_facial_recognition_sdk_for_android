@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.esandinfo.esfaceid.demo.MainActivity"
+    tools:openDrawer="start">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_layout"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_home_initDrawable"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="10dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                android:background="@drawable/button_bg"
+                android:text="批量添加人脸"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
+            <Button
+                android:id="@+id/btn_home_add_face"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="10dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                android:background="@drawable/button_bg"
+                android:text="添加人脸"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
+            <Button
+                android:id="@+id/btn_home_verify"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/button_bg"
+                android:text="认证"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fadingEdge="vertical"
+            android:layout_marginLeft="10px"
+            android:paddingBottom="20dp"
+            android:layout_marginTop="30dp"
+            android:scrollbars="vertical">
+            <TextView
+                android:id="@+id/tvShowInfos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:enabled="true"
+                android:focusable="true"
+                android:longClickable="true"
+                android:textIsSelectable="true" />
+        </ScrollView>
+    </LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

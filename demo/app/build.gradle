@@ -1,0 +1,62 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.aostarit.mobile.face"
+        minSdkVersion 28
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'net.java.dev.jna:jna:5.8.0@aar'
+    //room配置
+    def room_version = "2.2.5"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    //图片选择
+    implementation 'com.lcw.library:imagepicker:2.2.0'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    //网络请求
+    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.9.1'
+    //json
+    implementation group: 'com.alibaba', name: 'fastjson', version: '1.2.75'
+    implementation fileTree(dir: 'libs', include: ['esfaceid-release.aar'])
+    //数据库加密
+    implementation "net.zetetic:android-database-sqlcipher:4.4.3"
+}
